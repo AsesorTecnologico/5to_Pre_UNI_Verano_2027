@@ -1,0 +1,572 @@
+html, body {
+    overflow-x: hidden;    /* elimina scroll horizontal no deseado */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+:root {
+    --sun-gradient-start: #FF7E35;
+    --sun-gradient-end: #FFB347;
+    --summer-orange: #F05A28;
+    --warm-coral: #FF6F61;
+    --golden-mustard: #F4A261;
+    --deep-blue: #1E6091;
+    --sand-beige: #FFF3E0;
+    --card-white: #FFFFFF;
+    --shadow-soft: 0 12px 28px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 32px -12px rgba(240, 90, 40, 0.25);
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Poppins', 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background: linear-gradient(145deg, #FFF9F0 0%, #FFF2E0 100%);
+    color: #2D2A24;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ========== BANNER HERO ========== */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;             /* elimina cualquier margen */
+    padding: 0;
+    height: 110%;                   /* ← altura automática según la imagen */
+    background-size: contain;
+    min-height: 100px;     /* ajusta según tu imagen */
+    height: 500px;          /* o un valor fijo como 280px si quieres altura determinada */
+    background-color: #FF8C42;
+    background-image: url('imagenes/Portada.png');
+    background-size: cover;   /* o contain según prefieras */
+   /* background-position: center top; */
+    background-position: center -80px;
+    background-repeat: no-repeat;
+    background-color: #f0a06e;  /* color de fondo por si hay espacios vacíos */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 180px;
+    }
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    pointer-events: none;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 3;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.banner-icon {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.banner-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(125deg, #FFF9E0, #FFE5B4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 1.6rem;
+    }
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+}
+
+.banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,210,0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 60px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,200,0.5);
+}
+
+.banner-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    z-index: 2;
+}
+
+.banner-wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* HEADER (debajo del banner) */
+header {
+    background: linear-gradient(115deg, #E65100 0%, #FF8C42 50%, #FFB347 100%);
+    color: white;
+    padding: 1.8rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    box-shadow: 0 12px 24px -10px rgba(0,0,0,0.2);
+    margin-top: -2px; /* para fusionar con el banner */
+}
+
+.header-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M40 20v-6h-4v6h-6v4h6v6h4v-6h6v-4h-6zM12 52v-6H8v6H2v4h6v6h4v-6h6v-4h-6zM68 12V6h-4v6h-6v4h6v6h4v-6h6v-4h-6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.summer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,210,0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 60px;
+    padding: 0.3rem 1rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    width: fit-content;
+    border: 1px solid rgba(255,255,200,0.5);
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.92;
+    max-width: 500px;
+    font-weight: 500;
+}
+
+.header-decoration-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 24px;
+    font-size: 1.4rem;
+    opacity: 0.6;
+}
+
+/* SELECTOR TOMOS (resto igual, se mantiene) */
+.main-selector {
+    background: var(--card-white);
+    border-radius: 36px;
+    margin-top: -1.8rem;
+    padding: 1.8rem 1.5rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    z-index: 5;
+    border: 1px solid rgba(240, 90, 40, 0.15);
+}
+
+.selector-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #C13B00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.selector-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.selector-btn {
+    background: linear-gradient(125deg, #F7B05E, #F47C3C);
+    border: none;
+    padding: 1rem 2.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 60px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: var(--font-heading);
+}
+
+.selector-btn i {
+    font-size: 1.4rem;
+}
+
+.selector-btn.active {
+    background: linear-gradient(125deg, #D94A1A, #B13A0C);
+    box-shadow: 0 8px 20px rgba(217, 74, 26, 0.4);
+    transform: scale(1.02);
+}
+
+.selector-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(125deg, #FF8642, #F2672A);
+}
+
+.selector-hint {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    color: #B45A2E;
+    background: #FFF1E6;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.4rem 1.2rem;
+    border-radius: 60px;
+}
+
+/* TABS Y INFO */
+.tabs-container {
+    background: white;
+    border-radius: 32px;
+    margin-top: 1.8rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.tabs {
+    display: flex;
+    background: #FEF4E8;
+    border-bottom: 2px solid #FFD9B5;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #8B5A2B;
+    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tab.active {
+    background: white;
+    color: #E65C1E;
+    border-bottom: 3px solid #F4802E;
+}
+
+.tab-badge {
+    background: #FFD3B5;
+    padding: 3px 10px;
+    border-radius: 40px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #A33F0E;
+}
+
+.info-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.8rem;
+    background: #FFF7EF;
+    border-bottom: 1px solid #FFE3CC;
+}
+
+.current-selector, .year-indicator, .courses-counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.current-selector i, .year-indicator i, .courses-counter i {
+    color: #F47C3C;
+}
+
+.intro-text {
+    padding: 1rem 1.8rem 1.5rem;
+    background: white;
+    text-align: center;
+    color: #5D3A1F;
+    font-weight: 500;
+}
+
+.intro-text p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* GRID DE CURSOS */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 2rem;
+    padding: 2.5rem 0 2rem;
+}
+
+.course-card {
+    background: var(--card-white);
+    border-radius: 28px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.05);
+    border: 1px solid #FFE0C4;
+    position: relative;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: #FFB77C;
+}
+
+.selector-tag {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    background: #F05A28;
+    color: white;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: 40px;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.year-tag {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: #1E6091;
+    color: white;
+    font-weight: 600;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: 40px;
+}
+
+.course-logo {
+    background: linear-gradient(145deg, #FFF6EB, #FFEBD9);
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #FFDDBB;
+}
+
+.course-logo i {
+    font-size: 4rem;
+    filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.1));
+}
+
+.course-content {
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+}
+
+.course-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: #D64712;
+    margin-bottom: 0.65rem;
+}
+
+.course-content p {
+    color: #5C3E22;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.drive-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(95deg, #FF8C42, #F2672A);
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 60px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(242, 103, 42, 0.3);
+}
+
+.drive-link:hover {
+    background: #E65316;
+    transform: scale(1.02);
+    gap: 12px;
+}
+
+/* FOOTER */
+footer {
+    background: #1E2C30;
+    color: #FDEBD9;
+    margin-top: 3rem;
+    padding: 2.5rem 0;
+    border-radius: 32px 32px 0 0;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo i {
+    font-size: 2.5rem;
+    color: #FF9F6E;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #FFCEAA;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer-links a:hover {
+    color: #FFA15E;
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 750px) {
+    .container {
+        padding: 0 18px;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    .selector-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+    .tab {
+        font-size: 1rem;
+        flex-direction: column;
+    }
+    .info-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .selector-buttons {
+        gap: 0.8rem;
+    }
+    .selector-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .course-content h3 {
+        font-size: 1.3rem;
+    }
+    .banner-title {
+        font-size: 1.3rem;
+    }
+    .banner-subtitle {
+        font-size: 0.9rem;
+    }
+}

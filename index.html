@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>5to Pre-UNI Verano 2027 | Matemáticas y Ciencias</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== BANNER SUPERIOR (full width) ========== -->
+    <!-- ========== BANNER CON IMAGEN ========== -->
+<div class="hero-banner" style="background-image: url('imagenes/Portada.png');">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+        <div class="banner-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h2 class="banner-title">5to Pre UNI Verano 2027</h2>
+        <p class="banner-subtitle">Matemáticas • Ciencias • Ingreso directo</p>
+        <div class="banner-badge">
+            <i class="fas fa-calendar-alt"></i> Ciclo Intensivo · Enero - Marzo
+        </div>
+    </div>
+    <!-- Elimina el SVG de ondas si no lo quieres -->
+</div>
+
+    <header>
+       <!-- <div class="header-bg-pattern"></div>
+        <div class="container header-content">
+            <div class="summer-badge">
+                <i class="fas fa-sun"></i> Verano 2027
+            </div>
+            <h1>
+                <i class="fas fa-chalkboard-user"></i> 
+                Material Intensivo
+            </h1>
+            <p>Accede a los Tomos I y II de Matemáticas y Ciencias | Preparación UNI</p>
+            <div class="header-decoration-icons">
+                <i class="fas fa-calculator"></i>
+                <i class="fas fa-atom"></i>
+                <i class="fas fa-chart-line"></i>
+            </div>
+        </div> -->
+    </header>
+
+    <main class="container">
+        <!-- Selector principal: Tomos I y II -->
+        <div class="main-selector">
+            <div class="selector-title">
+                <i class="fas fa-layer-group"></i>
+                <span>📘 Elige tu Tomo de estudio</span>
+            </div>
+            <div class="selector-buttons" id="tomo-buttons">
+                <!-- Tomo I y Tomo II se generan dinámicamente con JS -->
+            </div>
+            <p class="selector-hint"><i class="fas fa-info-circle"></i> Cada tomo contiene el material completo del ciclo</p>
+        </div>
+
+        <!-- Pestañas de años (ediciones) -->
+        <div class="tabs-container">
+            <div class="tabs" id="year-tabs">
+                <button class="tab active" data-year="2025">
+                    2026 <span class="tab-badge">Fundacional</span>
+                </button>
+                <button class="tab" data-year="2026">
+                    2027 <span class="tab-badge">Actualizada</span>
+                </button>
+            </div>
+            
+            <div class="info-bar">
+                <div class="current-selector" id="current-selector">
+                    <i class="fas fa-book-open"></i>
+                    <span>Tomo I · Edición 2026</span>
+                </div>
+                <div class="year-indicator">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Material <strong id="current-year">2026</strong></span>
+                </div>
+                <div class="courses-counter">
+                    <i class="fas fa-chalkboard"></i> 
+                    <span id="courses-count">6</span> cursos disponibles
+                </div>
+            </div>
+            
+            <div class="intro-text">
+                <p>🔥 Prepárate con el material más completo. Cada curso contiene guías, ejercicios resueltos y simulacros en Google Drive. Selecciona tomo, año y accede al contenido.</p>
+            </div>
+        </div>
+
+        <!-- Grilla de materias -->
+        <section class="courses-grid" id="courses-container">
+            <!-- Las tarjetas se cargan dinámicamente -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-school-circle-check"></i>
+            </div>
+            <p>📚 5to Pre-UNI · Ciclo Verano 2027 · Matemáticas y Ciencias</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-envelope"></i> Soporte</a>
+                <a href="#"><i class="fas fa-book"></i> Guías de estudio</a>
+                <a href="#"><i class="fas fa-calendar-week"></i> Calendario</a>
+            </div>
+            <p class="copyright">© 2027 Academia Pre-UNI · Material exclusivo para estudiantes</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
